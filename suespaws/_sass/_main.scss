@@ -1,0 +1,43 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+
+$bp1: 320px;
+$bp2: 450px;
+$bp3: 768px;
+$bp4: 1000px;
+$bp5: 1100px;
+
+.container {
+	width: 100%;
+	padding: $gutter;
+	margin: 0 auto;
+	@include media($bp1){
+		min-width: 30em	
+	}
+	@include media($bp2){
+		min-width: 48em	
+	}
+	@include media($bp3){
+		min-width: 62em	  
+	}
+	@include media($bp4){
+		min-width: 75em	
+	}   
+}
+
+html {
+	background: blue;
+}
+ 
+@include media($bp1){
+	@include span-columns(6);
+
+}

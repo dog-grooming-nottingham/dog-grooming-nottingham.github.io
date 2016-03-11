@@ -1,0 +1,35 @@
+<header class="site-header">
+
+  
+  <div class="topbar">
+    <div class="container">
+    <div class="topbar__social">
+      <ul class="social-icons">
+          <li><a href="http://#"><i class="fa fa-facebook-square"></i></a></li>
+          <li><a href="http://#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+      <div class="topbar__tel">
+        <p>Appointments 7 days:</p>
+        <p><strong>07966 584 581</strong></p>
+      </div>
+    </div> 
+  </div> 
+
+  <div class="logobar">
+    <div class="container">
+    <a href="/" title="Sues Paws Dog Grooming Nottingham"><img class="logobar--logo" src="img/logo.jpg" alt="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    </a>
+      <nav>
+        <ul class="main-nav"> 
+          {% for page in site.pages %}
+          <li>
+          <a title="{{ page.title }}" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</header>
