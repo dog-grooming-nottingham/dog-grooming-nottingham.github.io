@@ -112,6 +112,8 @@ body, html {
 .logobar--logo {
 	display: block;
 	margin: 10px auto;
+	@include media($bp2){ 
+	max-width: 370px; }
 	@include media($bp3){
 		@include span-columns(4); 
 		margin: 12px 0; 
