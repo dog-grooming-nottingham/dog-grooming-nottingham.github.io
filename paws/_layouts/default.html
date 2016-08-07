@@ -3,12 +3,19 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{{page.id}}">
 
     {% include header.html %}
 
+
     <div class="page-content">
-        {{ content }}
+	
+	
+	<div class="photobar {{page.id}}">
+	</div>
+	
+    {{ content }}
+    
     </div>
 
     {% include footer.html %}

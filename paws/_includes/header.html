@@ -22,11 +22,13 @@
     </a>
       <nav>
         <ul class="main-nav"> 
-          {% for page in site.pages %}
-          <li>
-          <a title="{{ page.title }}" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          </li>
-          {% endfor %}
+        {% for node in site.pages %}
+        {% if page.url == node.url %}
+          <li class="main-nav__{{ node.id }} active"><a href="{{node.url}}"  title="{{ page.title }}" class="active">{{node.title}}</a></li>
+        {% else %}
+          <li class="main-nav__{{ node.id }}"><a title="{{ page.title }}" href="{{node.url}}">{{node.title}}</a></li>
+        {% endif %}
+      {% endfor %} 
         </ul>
       </nav>
     </div>

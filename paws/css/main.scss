@@ -12,7 +12,7 @@
 $purple: #6d3e6d;
 $pink: #c576c4;
 $mocha: #8b796c; 
-$black: #333;
+$black: #474747;
 $light: #f7f7f7;
 $base-space: 24px; 
 $yellow: #edca65;
@@ -26,6 +26,17 @@ $bp4: 1000px;
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	font-family: 'Merriweather', serif;
+	margin-top: 1em;
+}
+
+h1 {
+	font-size: rem(26);
+}
+h2 {
+	font-size: rem(22);
+}
+h3 {
+	font-size: rem(20);
 }
  
 body, html {
@@ -33,6 +44,17 @@ body, html {
 	font-family: 'Merriweather', serif; 
 	font-weight: 400;
 	font-size: rem(16);
+}
+
+p {
+	font-family: 'Merriweather', serif; 
+	font-weight: 400;
+	color: $black;
+	line-height: 1.7;
+}
+
+p, ul {
+	margin-bottom: .75em;
 }
 
 .container {
@@ -63,9 +85,15 @@ body, html {
 
 .btn {
 	font-family: 'Raleway', sans-serif;
-	font-weight: 700; 
+	font-weight: 500; 
 	text-transform: uppercase;
 	font-size: rem(20);
+	border: 2px solid #fff;
+	display: block;
+	padding: 4px 10px;
+	text-align: center;
+	color: #fff;
+	margin-top: 2em;
 }
 
 // Header
@@ -74,7 +102,7 @@ body, html {
 	background: $purple;
 	padding: 6px 0;
 	@include clearfix;
-	p { margin: 0; }
+	p { margin: 0;  }
 }
 
 .topbar__social {
@@ -96,15 +124,14 @@ body, html {
 
 .topbar__tel {
 	text-align: center;
-	color: #fff;
 	margin: 4px 0; 
-	p { font-weight: 300; font-size: rem(14); }
+	p { font-weight: 300; color: #fff; font-size: rem(14); }
 	strong {font-size: rem(23); font-weight: 400 }
 	@include media($bp2){
 		@include span-columns(6);
 		float:right; 
 		text-align: right;
-		p { font-size: rem(16);}
+		p { font-size: rem(16);  }
 		strong { font-size: rem(22); }
 	}
 }
@@ -128,6 +155,7 @@ body, html {
 		display: block;
 		text-align: center;
 		border-bottom: 1px solid #eee;
+		&.active a { color: lighten($purple, 10%); }
 		a {
 			color: $purple; 
 			display: block;
@@ -162,10 +190,15 @@ body, html {
 	}
 }
 
+.main-nav__home,
+.main-nav__ {
+	display: none!important;
+}
+
 // Banner 
 
 .home-banner {
-	background: $purple url('../img/banner.png') no-repeat center 0;
+	background: $purple url('../img/banner.jpg') no-repeat center 0;
 	background-size: cover;
 	min-height: 200px;
 	position: relative;
@@ -335,7 +368,6 @@ body, html {
 }
 
 .callouts {
-
 		@include media($bp2){
 			padding: $base-space 0;
 		}
@@ -390,7 +422,7 @@ body, html {
 		}
 
 		@include media($bp2){
-			height: 120px;
+			height: 145px;
 			min-height: 120px;
 		}
 
@@ -435,16 +467,165 @@ body, html {
 
 } // Callouts
 
-// Feedback slider
-.feedback {  
+
+// Content layout
+
+.main-content {
+	margin-bottom: 2em;
+		@include media($bp3){
+			@include span-columns(8); 
+			@include omega();
+		}
+	h1, h2, h3 { 
+		color: $purple;
+	}
+}
+
+.footnote { 
+	font-size: rem(12);
+}
+
+
+.main-content__title {
+	color: $purple;
+	font-size: rem(27);
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+	line-height: 1.9;
+	padding: 12px 0; 
+	padding-top: 0;
+	margin-top: 0;
+	&:after {
+		content: " ";
+		display: block;
+		height: 1px;
+		width: 30%;
+		background: $purple;
+	}
+}
+
+.main-content__image {
+	margin: 1em 0; 
+	@include media($bp3) {
+		@include span-columns(5.8);  
+		padding: 0 1em;
+		float: right;
+		margin-right: 0;
+	}
+}
+
+.intro {
+	font-size: rem(22);
+	color: $purple;
+}
+
+.sidebar { 
+	@include media($bp3) {
+		@include span-columns(4);  
+		}
+}
+
+.sidebar__cta {
+	background:  $yellow;
+	padding: $base-space; 
+	margin-bottom: $base-space; 
+	h3 { color: #fff; 
+	 font-size: rem(17);
+	 line-height: 1.6;
+	 font-weight: normal;
+	 margin: 0;
+		}
+	.btn { margin-top: 1em; 
+		&:hover, &:active, &:focus {
+			color: #fff;
+			background: darken($yellow, 5%);
+		}
+	}
+	p a { color: #fff; text-decoration: underline; }
 	@include media($bp3){
+		padding-bottom: 140px; 
+		 background: url('../img/sidebar1.jpg') no-repeat center bottom $yellow;
+		 background-size: contain;
+	}
+	@include media($bp4){
+		padding-bottom: 170px;  
+	}
+
+	.view__book & {
+		background: $mocha;
+		h3 {  font-size: rem(22); 
+			 margin-bottom: 12px;
+			}
+			p {
+				color: #fff;
+				padding: 12px 0;
+				margin: 0;
+			}
+			.btn { margin-top: 1em; margin-bottom: 10px; 
+				&:hover, &:active, &:focus {
+					color: #fff;
+					background: darken($mocha, 5%);
+				}
+			}
+			@include media($bp3){
+			   	 padding-bottom: 160px; 
+				 background: url('../img/sidebar2.jpg') no-repeat center bottom $mocha;
+				 background-size: contain;
+			}
+	}
+
+}
+
+.gallery {
+	clear: both;
+	float: left;
+	margin: $base-space*2 0 0 0;
+	@include clearfix;
+}
+
+.gallery__items--thumb {
+	@include span-columns(6);
+ 	@include omega(2n);
+ 	@include media($bp3){
+ 		 @include omega-reset(2n);
+	   	 @include span-columns(3);
+		 @include omega(4n);
+			}
+}
+
+.photobar {
+	padding: 16% 0;
+	margin-bottom: $base-space;
+	background: url(../img/photobar4.jpg) no-repeat center 0 transparent; background-size: cover;
+	.services & {
+		background: url(../img/photobar3.jpg) no-repeat center 0 transparent; background-size: cover;
+	}
+	.home & {
+		display: none;
+	}
+	@include media($bp2) {
+		 
+	}
+	@include media($bp3) {
+		padding: 9em 0;
+	}
+}
+
+
+
+
+// Feedback slider
+
+.feedback {
+	padding: 2em 0;
+	@include media($bp3) {
 		position: relative;
-		.bx-controls {  
+		.bx-controls {
 			position: absolute;
 			right: 10px;
 			bottom: 0;
 		}
-	} 
+	}
 }
 
 
@@ -528,6 +709,43 @@ body, html {
 }
    
 
+ // Contact form 
+.contact-form { 
+	@include media($bp2) {
+		label {
+ 		  @include span-columns(6);
+ 		  @include omega(2n);
+		}
+ 	  } 
+ 	  label {
+ 	  	font-weight: lighter;
+ 	  	line-height: 1.5; 
+ 	  }
+ 	  input[type="text"],input[type="email"], textarea {
+ 	  	border-radius: 0;
+ 	  	border: 1px solid $mocha;
+ 	  }
+ 	  textarea {
+ 	  	height: 130px;
+ 	  }
+ 	  input[type="submit"]{
+ 	  	clear: both;
+ 	  	float: left;
+ 	  }
+}
+
+.sidebar__cta--features {
+	list-style: disc;
+	color: #fff;
+	padding: 12px;
+	 
+	li {
+		padding: 6px 0;
+		color: #fdebdb;
+	}
+}
+
+
 // Feedback - Slider mods
 
 .bx-wrapper {
@@ -549,7 +767,12 @@ body, html {
 		 }
 } 
 
+ 
 
+
+
+
+// Footer
 
 .site-footer {
 	padding-top: $base-space;

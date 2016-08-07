@@ -1,6 +1,60 @@
 ---
 layout: default
 title: Book
+id: book
 permalink: book.html
+menu: true
 ---
-<p>Test</p>
+
+
+<div class="view view__book">
+	<div class="container">
+		
+		<div class="sidebar">
+			<div class="sidebar__cta"> 
+				<ul class="sidebar__cta--features">
+					<li>Always One-to-one care and attention</li>
+					<li>Friendly, no-fuss service</li>					
+					<li>Flexible; able to fit around your schedule</li>
+					<li>De-matting, wash, dry and fur treatments available</</li>
+					<li>Extra patience for difficult or nervous dogs</li>
+				</ul>
+				<p>Email: <a href="mailto:suespaws@gmail.com">suespaws@gmail.com</a><br />
+				Tel: 07966 584 581</p>
+				
+			</div>
+		</div>
+
+		<article class="main-content">
+			<header>
+				<h2 class="main-content__title">Book your dog with Sue</h2>
+			</header>
+			<p class="intro">Please use the form to book your dog in and we'll be sure to give you a call back promptly:</p>
+
+			<form class="contact-form" method="POST" action="http://formspree.io/martinonotts@gmail.com">
+			  <label for="from">Your name
+			  	<input type="text" name="from" id="fm-from" class="name">
+			  </label>
+			  <label for="fm-email">Email
+			  	<input type="email" name="_replyto" id="fm-email">
+			  </label>
+			  <label for="fm-time">Preferred appointment time
+			  	<input type="text" name="time" id="fm-time" class="form-time">
+			  </label>
+			  <label for="fm-date">Preferred appointment day
+			  	<input type="text" name="date" id="fm-date" class="form-date">
+			  </label>
+			  <label for="fm-details">Please give details of breed, size, coat condition and cut required 
+			  	<textarea name="body" id="fm-details" ></textarea>
+			  </label>
+			  <input type="submit" value="Send">
+			</form> 
+			
+		</article>
+		
+		{% include gallery.html %}		
+
+		{% include feedback.html %}
+
+		</div>
+</div>
