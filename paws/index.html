@@ -3,6 +3,7 @@ layout: default
 id: home
 title: Home
 exclude: true
+order: 0
 ---
 
 <div class="view home">
@@ -13,21 +14,21 @@ exclude: true
       <div class="home-banner__pullout">
         <p>Get the best care for your dog</p>
         <h2>Mobile dog grooming in Nottingham</h2>
-        <a class="btn home-banner__pullout--btn" href="/book">Book now</a>
+        <a class="btn home-banner__pullout--btn" title="Book an appointment now" href="/book">Book now</a>
       </div>
     </div>
 
   </div>
-
+  <main id="content">
   <div class="home-features">
     <div class="container"> 
       <div class="home-features__circles">
           <ul>
             <li class="home-features__circles--circle">
-              <img src="img/circle1.jpg"  alt="Sue's Paws"/>
+              <img src="img/circle1.jpg"  alt="Sue's Paws" aria-hidden="true" />
             </li>
             <li class="home-features__circles--circle">
-              <img src="img/circle2.jpg"  alt="Sue's Paws"/>
+              <img src="img/circle2.jpg"  alt="Sue's Paws" aria-hidden="true" />
             </li>
           </ul>
       </div>
@@ -35,31 +36,32 @@ exclude: true
       <ul class="home-features__list">
         <li class="home-features--item1">
           <h3>Home or mobile service</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam couptatum culpa nobis, excepturi quidem.</p>
+          <p>We can come to you and use your facilities or you can come to us, as we have specialist bathing equipment for dogs of all sizes.</p>
         </li>
         <li class="home-features--item2">
           <h3>Collection available</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam couptatum culpa nobis, excepturi quidem.</p>
+          <p>Not able to make it? No problem; we can collect your dog from within the local Nottingham area (charges apply).</p>
         </li>
         <li class="home-features--item3">
           <h3>Always One-to-one attention</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam couptatum culpa nobis, excepturi quidem.</p>
+          <p>As dog lovers, we recognise the needs of each individual, and treat each with the same compassion as our own dogs. We love for all dogs to leave us happy and free from disress.</p>
         </li>
         <li class="home-features--item4">
           <h3>City &amp; Guilds qualified</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam couptatum culpa nobis, excepturi quidem.</p>
+          <p>Experienced owners, enthusiasts and groomers - we can work with many types of dogs and groom requirements.</p>
         </li>
       </ul>
 
       </div>
     </div><!-- /home features -->
+    </main>
   
   <div class="callouts">
     <div class="container">
       <div class="callouts__ad callouts__ad1">
         <div class="callouts__sec">
           <h4>Flexible 7-day apointments</h4>
-          <a href="/book" class="btn">Book now</a>
+          <a href="/book.html" class="btn" title="Book an appointment">Book now</a>
         </div>
         <div class="callouts__img">
         </div>
@@ -67,7 +69,7 @@ exclude: true
       <div class="callouts__ad callouts__ad2">
         <div class="callouts__sec">
           <h4>Caring for your dog</h4>
-          <a href="/book" class="btn">Meet Sue</a>
+          <a href="/meet-sue.html" title="Meet Sue" class="btn">Meet Sue</a>
         </div>
         <div class="callouts__img"> 
         </div>

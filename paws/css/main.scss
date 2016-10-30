@@ -57,6 +57,35 @@ p, ul {
 	margin-bottom: .75em;
 }
 
+body { 
+	opacity: 0;
+	transition: opacity .3s linear .2s;
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+.skip {
+	left: -999em;
+	position: absolute; 
+	top: 0;
+	padding: 12px;
+	text-align: center; 
+	font-weight: 700;
+	&:focus, &:active { 
+		left: 0;
+		font-size: rem(17); 
+		color: black;
+		display: inline;
+		border: 1px dotted white;
+		outline: 0;
+		 @include media($bp1) { 
+			 left: 60px;
+			 color: white;
+		 }
+	}
+}
+
 .container {
 	@include outer-container;
 	//border: 1px solid tint(#f00, 40%);
@@ -155,7 +184,7 @@ p, ul {
 		display: block;
 		text-align: center;
 		border-bottom: 1px solid #eee;
-		&.active a { color: lighten($purple, 10%); }
+		&.active a {color: #93afef}
 		a {
 			color: $purple; 
 			display: block;
@@ -163,21 +192,24 @@ p, ul {
 			line-height: 2;
 			font-family: 'Raleway', sans-serif;
 			font-size: rem(20);
-			&:hover { color: lighten($purple, 10%); }
+			&:hover { color: #93afef }
 		}
 	}
 	@include media($bp3){
-		@include span-columns(7); 
-		float:right;
+		@include span-columns(7);
+		text-align: right;
 		padding-top: 55px;
+		float: right;
 		li {
-			display: inline; float: right;
+			display: inline-block;
 			border: 0; text-align: center;
 			a {
 				font-size: rem(18);
 				font-weight: 500;
-				padding-left: $base-space; 
+				padding: 0 $base-space;
+				
 			}
+			&.active a {color: $purple; font-weight: 700; }
 		}
 	}
 	@include media($bp4){
@@ -265,6 +297,8 @@ p, ul {
 // Home features
 
 .home-features {
+	@include clearfix;
+	padding: $base-space 0;
 	.container { position: relative; }
 }
 
@@ -574,6 +608,16 @@ p, ul {
 			}
 	}
 
+}
+
+.service-points {
+	border-radius: 2px;
+	background: #f8f8f8;
+	padding: $base-space;
+	li {
+		list-style:  inside disc;
+		padding: 8px 0;
+	}
 }
 
 .gallery {

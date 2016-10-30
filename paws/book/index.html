@@ -4,6 +4,7 @@ title: Book
 id: book
 permalink: book.html
 menu: true
+order: 3
 ---
 
 
@@ -24,12 +25,12 @@ menu: true
 				
 			</div>
 		</div>
-
+		<main id="content">
 		<article class="main-content">
 			<header>
 				<h2 class="main-content__title">Book your dog with Sue</h2>
 			</header>
-			<p class="intro">Please use the form to book your dog in and we'll be sure to give you a call back promptly:</p>
+			<p class="intro">Please use the form to book your dog in and we'll call you back promptly:</p>
 
 			<form class="contact-form" method="POST" action="http://formspree.io/martinonotts@gmail.com">
 			  <label for="from">Your name
@@ -51,6 +52,7 @@ menu: true
 			</form> 
 			
 		</article>
+		</main>
 		
 		{% include gallery.html %}		
 

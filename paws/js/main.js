@@ -5,4 +5,7 @@ $(window).load(function() {
   	nextText: '<i class="fa fa-angle-right"></i>',
   	prevText: '<i class="fa fa-angle-left"></i>' 
 	});
+
+	$('body').addClass('loaded');
+
 });
