@@ -253,8 +253,7 @@ body {
 	background: #fff;
 	background: rgba(255,255,255,.6);
 	padding: $base-space;
-	p { font-weight: 300; margin-bottom: 10px; text-transform: uppercase; color: $purple; }
-	h2 { font-weight: 400; color: #3E3E3E; font-size: rem(23); margin-bottom: 10px; }
+	
 	.btn {
 		font-size: rem(17);
 		color: $purple;
@@ -278,7 +277,7 @@ body {
 		left: 12px;
 		bottom: 12px;
 		@include span-columns(7);
-		p { font-size: rem(20); }
+		
 		h2 { font-size: rem(26); margin-bottom: 16px; padding-right: 10%; }
 		.btn {
 			display: inline;
@@ -293,9 +292,18 @@ body {
 
 }  // Home banner
 
+.home-banner__pullout--intro { font-weight: 300; margin-bottom: 10px; text-transform: uppercase; color: $purple; 
+				font-size: rem(20);  
+  
+}
+
+.home-banner__pullout--title { font-weight: 400; color: #3E3E3E; font-size: rem(23); margin-bottom: 10px; 
+		@include media($bp3){ 
+			padding-right: 40%;
+		}
+}
 
 // Home features
-
 .home-features {
 	@include clearfix;
 	padding: $base-space 0;
@@ -765,7 +773,7 @@ body {
  	  	font-weight: lighter;
  	  	line-height: 1.5; 
  	  }
- 	  input[type="text"],input[type="email"], textarea {
+ 	  input, textarea {
  	  	border-radius: 0;
  	  	border: 1px solid $mocha;
  	  }
@@ -776,6 +784,11 @@ body {
  	  	clear: both;
  	  	float: left;
  	  }
+}
+
+.contact-form-details {
+	clear: both; 
+	@include span-columns(12);
 }
 
 .sidebar__cta--features {
