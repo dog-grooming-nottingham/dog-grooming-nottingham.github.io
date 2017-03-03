@@ -184,6 +184,9 @@ body {
 		display: block;
 		text-align: center;
 		border-bottom: 1px solid #eee;
+		&:first-child {
+			display: none;
+		}
 		&.active a {color: #93afef}
 		a {
 			color: $purple; 
