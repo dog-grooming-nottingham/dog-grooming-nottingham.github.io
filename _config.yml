@@ -18,3 +18,5 @@ permalink: pretty
 tel: "07966 584 581"
 # Build settings
 markdown: kramdown 
+sass:
+  style: compressed
