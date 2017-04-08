@@ -23,11 +23,13 @@
     <img class="logobar--logo" src="img/logo.jpg" alt="{{ site.title }}" />
     </a>
       <nav role="navigation">
-        {% assign sorted_pages = site.pages | sort:"order" %}
-        <ul class="main-nav"> 
-        {% for node in sorted_pages %} 
-          <li class="main-nav__item {% if page.url == node.url %} active{% endif %}"><a href="{{node.url}}"  title="{{ node.title }}" >{{node.title}}</a></li> 
-        {% endfor %} 
+         <ul class="main-nav">  
+          {% assign navigation_pages = site.pages | sort: 'navigation_weight' %}
+            {% for p in navigation_pages %}
+            {% if p.navigation_weight %} 
+              <li class="main-nav__item {% if p.url == page.url %} active{% endif %}"><a href="{{p.url}}"  title="{{ p.title }}" >{{p.title}}</a></li> 
+            {% endif %}
+          {% endfor %}
         </ul>
       </nav>
     </div>

@@ -11,6 +11,7 @@
 // Vars
 $purple: #6d3e6d;
 $pink: #c576c4;
+$deep-purple: #3d303d;
 $mocha: #8b796c; 
 $black: #474747;
 $light: #f7f7f7;
@@ -188,7 +189,7 @@ body {
 			display: none;
 		}
 		&.active a {color: #93afef}
-		a {
+		a { 
 			color: $purple; 
 			display: block;
 			font-weight: 700;
@@ -207,7 +208,7 @@ body {
 			display: inline-block;
 			border: 0; text-align: center;
 			a {
-				font-size: rem(18);
+				font-size: rem(13);
 				font-weight: 500;
 				padding: 0 $base-space;
 				
@@ -219,7 +220,7 @@ body {
 		padding-top: 80px;
 		li {
 			a {
-				font-size: rem(20);
+				font-size: rem(16);
 			}
 		}
 	}
@@ -555,8 +556,24 @@ body {
 		@include span-columns(5.8);  
 		padding: 0 1em;
 		float: right;
-		margin-right: 0;
+		margin-right: 0; 
+			&.main-content__image--small {
+			
+				@include span-columns(4); 
+				float: right; 
+			}
 	}
+
+	
+}
+
+.main-content__caption {
+	background: #f8f8f8;
+	padding: 10px;
+	font-style: italic;
+	color: #7f7f7f;
+	font-size: 12px;
+	text-align: center;
 }
 
 .intro {
@@ -571,7 +588,7 @@ body {
 }
 
 .sidebar__cta {
-	background:  $yellow;
+	background: $yellow;
 	padding: $base-space; 
 	margin-bottom: $base-space; 
 	h3 { color: #fff; 
@@ -586,7 +603,7 @@ body {
 			background: darken($yellow, 5%);
 		}
 	}
-	p a { color: #fff; text-decoration: underline; }
+	p, a { color: #fff; text-decoration: underline; }
 	@include media($bp3){
 		padding-bottom: 140px; 
 		 background: url('../img/sidebar1.jpg') no-repeat center bottom $yellow;
@@ -617,8 +634,7 @@ body {
 				 background: url('../img/sidebar2.jpg') no-repeat center bottom $mocha;
 				 background-size: contain;
 			}
-	}
-
+	} 
 }
 
 .service-points {
@@ -801,7 +817,7 @@ body {
 	 
 	li {
 		padding: 6px 0;
-		color: #fdebdb;
+		color: #fff;
 	}
 }
 
@@ -826,10 +842,6 @@ body {
 		&:hover { color: darken(#b260b1, 10%); }
 		 }
 } 
-
- 
-
-
 
 
 // Footer
