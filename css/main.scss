@@ -584,6 +584,10 @@ body {
 		}
 }
 
+.sidebar__email a {
+	text-decoration: underline;
+}
+
 .sidebar__cta {
 	background: $yellow;
 	padding: $base-space; 
@@ -600,7 +604,7 @@ body {
 			background: darken($yellow, 5%);
 		}
 	}
-	p, a { color: #fff; text-decoration: underline; }
+	p, a, cite { color: #fff;   }
 	@include media($bp3){
 		padding-bottom: 140px; 
 		 background: url('../img/sidebar1.jpg') no-repeat center bottom $yellow;
@@ -619,6 +623,12 @@ body {
 				color: #fff;
 				padding: 12px 0;
 				margin: 0;
+				&.sidebar__feedback {
+					color: #e6d0ab;
+					&+ cite { 
+						color: #e6d0ab
+					}
+				}
 			}
 			.btn { margin-top: 1em; margin-bottom: 10px; 
 				&:hover, &:active, &:focus {
@@ -819,6 +829,11 @@ body {
 .contact-form-details {
 	clear: both; 
 	@include span-columns(12);
+}
+
+.sidebar__feedback { 
+	color: #eeebd8;	
+	font-style: italic;
 }
 
 .sidebar__cta--features {
