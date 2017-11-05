@@ -26,8 +26,7 @@ $bp4: 1000px;
  
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
-	font-family: 'Merriweather', serif;
-	margin-top: 1em;
+ 	margin-top: 1em;
 }
 
 h1 {
@@ -40,15 +39,14 @@ h3 {
 	font-size: rem(20);
 }
  
-body, html {
+body, html * {
 	margin: 0;
 	font-family: 'Merriweather', serif; 
 	font-weight: 400;
 	font-size: rem(16);
 }
 
-p {
-	font-family: 'Merriweather', serif; 
+p { 
 	font-weight: 400;
 	color: $black;
 	line-height: 1.7;
@@ -181,33 +179,40 @@ body {
 
 .main-nav {
 	padding: 12px 0;
+	padding-top: 0;
+	@include clearfix;
+	margin-bottom: 10px;
 	li {
 		display: block;
 		text-align: center;
 		border-bottom: 1px solid #eee; 
+		@include span-columns(6);
+		@include omega(2n);
 		&.active a {color: #93afef}
 		a { 
 			color: $purple; 
 			display: block;
-			font-weight: 700;
-			line-height: 2;
+			line-height: 1.8;
 			font-family: 'Raleway', sans-serif;
-			font-size: rem(20);
+			font-size: rem(19);
 			&:hover { color: #93afef }
 		}
 	}
 	@include media($bp3){
-		@include span-columns(7);
+		@include span-columns(8);
 		text-align: right;
 		padding-top: 55px;
 		float: right;
 		li {
+			width: auto;
+			float: none;
+			@include omega-reset(2n);
 			display: inline-block;
 			border: 0; text-align: center;
 			a {
-				font-size: rem(13);
-				font-weight: 500;
-				padding: 0 $base-space;
+				font-size: rem(14);
+				font-weight: 500; 
+				padding: 0 $base-space/2.5;
 				
 			}
 			&.active a {color: $purple; font-weight: 700; }
@@ -231,7 +236,7 @@ body {
 // Banner 
 
 .home-banner {
-	background: $purple url('../img/banner.jpg') no-repeat center 0;
+	background: $purple url('#{$imgPath}/banner.jpg') no-repeat center 0;
 	background-size: cover;
 	min-height: 200px;
 	position: relative;
@@ -373,19 +378,19 @@ body {
 }
 
 .home-features--item1 h3 {
-	background: transparent url(../img/home-icon.svg) no-repeat left -3px; background-size: contain;
+	background: transparent url(#{$imgPath}/home-icon.svg) no-repeat left -3px; background-size: contain;
 }
 
 .home-features--item2 h3 {
-	background: transparent url(../img/paw-icon.svg) no-repeat left 0; background-size: contain;
+	background: transparent url(#{$imgPath}/paw-icon.svg) no-repeat left 0; background-size: contain;
 }
 
 .home-features--item3 h3 {
-	background: transparent url(../img/care-icon.svg) no-repeat left 0; background-size: contain;
+	background: transparent url(#{$imgPath}/care-icon.svg) no-repeat left 0; background-size: contain;
 }
 
 .home-features--item4 h3 {
-	background: transparent url(../img/award-icon.svg) no-repeat left 0; background-size: contain;
+	background: transparent url(#{$imgPath}/award-icon.svg) no-repeat left 0; background-size: contain;
 }
 
 .home-features__circles {
@@ -484,7 +489,7 @@ body {
 		.btn:hover { background: darken(#c576c4, 5%); } 
 		@include media($bp2){
 			.callouts__img {
-				background: #c576c4 url(../img/callout1.jpg) no-repeat right 0;
+				background: #c576c4 url(#{$imgPath}/callout1.jpg) no-repeat right 0;
 				background-size: cover;
 			}
 		}
@@ -495,7 +500,7 @@ body {
 		.btn:hover { background: darken($mocha, 5%); }
 		@include media($bp2){
 			.callouts__img {
-				background: $mocha url(../img/callout2.jpg) no-repeat right 0;
+				background: $mocha url(#{$imgPath}/callout2.jpg) no-repeat right 0;
 				background-size: cover;
 			}
 		}
@@ -521,6 +526,15 @@ body {
 		}
 	h1, h2, h3 { 
 		color: $purple;
+	}
+}
+
+.view__book {
+	.main-content {
+		@include media($bp3){
+			@include span-columns(8); 
+			@include omega-reset(1n);
+		}
 	}
 }
 
@@ -592,11 +606,12 @@ body {
 	background: $yellow;
 	padding: $base-space; 
 	margin-bottom: $base-space; 
-	h3 { color: #fff; 
-	 font-size: rem(17);
-	 line-height: 1.6;
-	 font-weight: normal;
-	 margin: 0;
+	h3 {
+		color: #fff; 
+		font-size: rem(17);
+		line-height: 1.6;
+		font-weight: normal;
+		margin: 0;
 		}
 	.btn { margin-top: 1em; 
 		&:hover, &:active, &:focus {
@@ -607,7 +622,7 @@ body {
 	p, a, cite { color: #fff;   }
 	@include media($bp3){
 		padding-bottom: 140px; 
-		 background: url('../img/sidebar1.jpg') no-repeat center bottom $yellow;
+		 background: url('#{$imgPath}/sidebar1.jpg') no-repeat center bottom $yellow;
 		 background-size: contain;
 	}
 	@include media($bp4){
@@ -638,7 +653,7 @@ body {
 			}
 			@include media($bp3){
 			   	 padding-bottom: 160px; 
-				 background: url('../img/sidebar2.jpg') no-repeat center bottom $mocha;
+				 background: url('#{$imgPath}/sidebar2.jpg') no-repeat center bottom $mocha;
 				 background-size: contain;
 			}
 	} 
@@ -672,11 +687,14 @@ body {
 }
 
 .photobar {
-	padding: 16% 0;
+	padding: 10% 0;
+	@include media($bp3){
+		padding: 16% 0;
+	}
 	margin-bottom: $base-space;
-	background: url(../img/photobar4.jpg) no-repeat center 0 transparent; background-size: cover;
+	background: url(#{$imgPath}/photobar4.jpg) no-repeat center 0 transparent; background-size: cover;
 	.services & {
-		background: url(../img/photobar3.jpg) no-repeat center 0 transparent; background-size: cover;
+		background: url(#{$imgPath}/photobar5.jpg) no-repeat center 0 transparent; background-size: cover;
 	}
 	.home & {
 		display: none;
@@ -803,12 +821,8 @@ body {
 
  // Contact form 
 .contact-form { 
-	@include media($bp2) {
-		label {
- 		  @include span-columns(6);
- 		  @include omega(2n);
-		}
- 	  } 
+	@include clearfix; 
+
  	  label {
  	  	font-weight: lighter;
  	  	line-height: 1.5; 
@@ -823,13 +837,21 @@ body {
  	  input[type="submit"]{
  	  	clear: both;
  	  	float: left;
- 	  }
+	   }
+	   
+	   @include media($bp2) {
+		label {
+ 		  @include span-columns(6);
+ 		  @include omega(2n);
+		}
+	} 
 }
 
 .contact-form-details {
 	clear: both; 
 	@include span-columns(12);
 }
+
 
 .sidebar__feedback { 
 	color: #eeebd8;	
