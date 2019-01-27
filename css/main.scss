@@ -41,13 +41,11 @@ h3 {
  
 body, html * {
 	margin: 0;
-	font-family: 'Merriweather', serif; 
-	font-weight: 400;
+	font-family: 'Merriweather', serif;
 	font-size: rem(16);
 }
 
-p { 
-	font-weight: 400;
+p {  
 	color: $black;
 	line-height: 1.7;
 }
@@ -485,11 +483,11 @@ body {
 
 
 	.callouts__ad1 {
-		background: #c576c4;
-		.btn:hover { background: darken(#c576c4, 5%); } 
+		background: $purple;
+		.btn:hover { background: darken($purple, 5%); } 
 		@include media($bp2){
 			.callouts__img {
-				background: #c576c4 url(#{$imgPath}/callout1.jpg) no-repeat right 0;
+				background: $purple url(#{$imgPath}/callout1.jpg) no-repeat right 0;
 				background-size: cover;
 			}
 		}
@@ -520,12 +518,16 @@ body {
 
 .main-content {
 	margin-bottom: 2em;
-		@include media($bp3){
-			@include span-columns(8); 
-			@include omega();
-		}
+	@include media($bp3){
+		@include span-columns(8); 
+		@include omega();
+	}
 	h1, h2, h3 { 
 		color: $purple;
+		margin-bottom: 10px;
+	}
+	h3 {
+		margin-bottom: 12px;
 	}
 }
 
@@ -595,7 +597,7 @@ body {
 .sidebar { 
 	@include media($bp3) {
 		@include span-columns(4);  
-		}
+	}
 }
 
 .sidebar__email a {
@@ -606,13 +608,13 @@ body {
 	background: $yellow;
 	padding: $base-space; 
 	margin-bottom: $base-space; 
-	h3 {
+	h1, h2 {
 		color: #fff; 
 		font-size: rem(17);
 		line-height: 1.6;
 		font-weight: normal;
 		margin: 0;
-		}
+	}
 	.btn { margin-top: 1em; 
 		&:hover, &:active, &:focus {
 			color: #fff;
@@ -898,7 +900,7 @@ body {
 	padding-top: $base-space;
 	p { 
 		color: $mocha;
-		 margin: 0;
+		 margin: 0; 
 		 font-weight: lighter;
 	} 
 }
@@ -929,5 +931,11 @@ body {
 	}
 }
 
+.copyright {
+	clear: both;
+	font-size: 12px;
+}
 
-
+.u-block {
+	display: block; 
+}

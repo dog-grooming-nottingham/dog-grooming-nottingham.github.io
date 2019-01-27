@@ -16,25 +16,17 @@ var isThanks = function(){
 };
 
 if ( isThanks() ) {  
-	var el = document.getElementsByClassName('main-content')[0];
+	var el = document.querySelector('main-content');
 	el.innerHTML = ''; 
 
 	var p = document.createElement('p');
 	p.innerHTML = "Form sent! We'll be in touch shortly...";
 	p.classList.add("intro");
 	el.appendChild(p);
-} 
+}
 
-// Show bookings available for current month
+var year = new Date();
+year = year.getFullYear();
+document.getElementById('js-year').innerHTML = year;
 
-var monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-
-var d = new Date();
-var monthTarget = document.getElementById('month');
-
-if (typeof(monthTarget) != 'undefined' && monthTarget != null) 	{ 
-			monthTarget.innerHTML = monthNames[d.getMonth()]
-	}
 });
