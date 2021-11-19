@@ -333,9 +333,7 @@ body {
 		line-height: 2;
 	}
 
-	@include media($bp3) {
-		position: absolute;
-		top: 0;
+	@include media($bp3) {  
 		padding: $base-space 0;
 		li {
 			@include span-columns(6); 
