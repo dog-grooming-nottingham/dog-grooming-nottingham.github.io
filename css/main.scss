@@ -340,12 +340,7 @@ body {
 		li {
 			@include span-columns(6); 
 			@include omega(2n);
-			&.home-features--item1,
-			&.home-features--item3 {
-				padding-right: 85px;
-			}
-			&.home-features--item2,
-			&.home-features--item4 {
+			&.home-features--item {
 				padding-left: 85px;
 			}
 		}
@@ -393,8 +388,7 @@ body {
 
 .home-features__circles {
 	display: none;
-	text-align: center;
-	padding-top: $base-space;
+	text-align: center; 
 	@include media($bp3){
 		display: block;
 	}
@@ -408,6 +402,7 @@ body {
 
 .home-features__circles--circle {
 	width: 180px;
+	display: inline-block;
 	margin: 0 auto;
 	margin-bottom: $base-space * 2;
 	text-align: center;
